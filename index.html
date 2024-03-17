@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            orientation: portrait; /* Added to enforce vertical orientation */
+            orientation: portrait;
         }
 
         #webviewContainer {
@@ -31,7 +31,7 @@
             top: 0;
             left: 0;
             z-index: 1;
-            display: none; /* Initially hide the iframe */
+            display: none;
         }
 
         #topRightBox {
@@ -42,21 +42,7 @@
             height: 50px;
             background-color: #000000;
             z-index: 2;
-            display: none; /* Initially hide the top right box */
-        }
-
-        #bottomBar {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 30px;
-            background-color: #000000;
-            color: #fff;
-            text-align: center;
-            line-height: 30px; 
-            font-size: 14px;
-            z-index: 3;
-            display: none; /* Initially hide the bottom bar */
+            display: none;
         }
     </style>
 </head>
@@ -65,23 +51,18 @@
 <div id="webviewContainer">
     <iframe id="websiteFrame" src="https://tinyurl.com/pupa2024"></iframe>
     <div id="topRightBox"></div>
-    <div id="bottomBar"></div>
 </div>
 
 <script>
     window.onload = function() {
-        // Show the iframe after the page is fully loaded
         document.getElementById("websiteFrame").style.display = "block";
-        
-        // Show the top right box and bottom bar immediately
-        document.getElementById("topRightBox").style.display = "block";
-        document.getElementById("bottomBar").style.display = "block";
+        setTimeout(function() {
+            document.getElementById("topRightBox").style.display = "block";
+        }, 2000);
     };
 </script>
    <script>
-        // Check if the device is not a mobile phone
         if (!(/Mobi/.test(navigator.userAgent))) {
-            // Redirect to www.youtube.com
             window.location.href = "https://kletechbvb.github.io/Pupa2024./";
         }
     </script>
